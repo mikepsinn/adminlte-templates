@@ -1,10 +1,22 @@
+<?php /** @var $NAMESPACE_MODEL$\$MODEL_NAME$ $$MODEL_NAME_CAMEL$ */ ?>
 @extends('layouts.app')
 
 @section('content')
-    <section class="content-header">
-        <h1>
-            $MODEL_NAME_HUMAN$
+   <section class="content-header" style="min-height: 30px;">
+       <h1 class="pull-left">
+           <a class="btn btn-primary pull-left"
+               href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') }}">
+               <i class="glyphicon glyphicon glyphicon-chevron-left"></i>
+           </a>
+            &nbsp; $MODEL_NAME_HUMAN$
         </h1>
+       <h1 class="pull-right">
+          <a class="btn btn-primary pull-right"
+               href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show', [$$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$]) }}">
+               <i class="glyphicon glyphicon glyphicon-eye-open"></i>
+               &nbsp; Preview
+          </a>
+       </h1>
    </section>
    <div class="content">
        @include('adminlte-templates::common.errors')
